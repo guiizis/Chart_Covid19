@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo Desafio</title>
+    <style>
+        html,body {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            background-color: azure;
+            margin: 0;
+        }
+        .pizza_data {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        #pizza {
+            max-width: 60%;
+            max-height: 70%;
+        }
+        #bar {
+            max-width: 80%;
+            max-height: 80%;
+            margin: 2rem;
+        }
+        .pizza_data .kpi_card {
+            background-color: aqua;
+            width: 15rem;
+            height: 11rem;
+            border-radius: 10%;
+            margin: 1rem 0rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="pizza_data">
+        <div style='width:"50%"; height:"50%"'>
+            <div class="kpi_card">
+                <h4>Total Confirmados</h4>
+                <span id="kpi_confirmed"></span>
+            </div>
+            <div class="kpi_card">
+                <h4>Total Mortos</h4>
+                <span id="kpi_deads"></span>
+            </div>
+            <div class="kpi_card">
+                <h4>Total Recuperados</h4>
+                <span id="kpi_saved"></span>
+            </div>
+        </div>
+        <canvas id="pizza"></canvas>
+    </div>
+    
+    <div>
+        <label>
+            Data Inicio
+            <input type="date" id="date_start_bar">
+        </label>
+        <label>
+            Data Final
+            <input type="date" id="date_end_bar">
+        </label>
+        <label>
+            <select name="country_bar" id="country_bar">
+                <option value="all"> Selecione um País</option>
+            </select>
+        </label>
+        <label>
+            <select name="country_bar_info" id="country_bar_info">
+                <option value="all"> Selecione informação</option>
+                <option value="deaths"> Mortos </option>
+                <option value="recovered"> Recuperados </option>
+                <option value="confirmed"> Casos Confirmados </option>
+            </select>
+        </label>
+
+        <button id="btn_bar_apply">Applicar</button>
+    </div>
+
+    <canvas id="bar"></canvas>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
